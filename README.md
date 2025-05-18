@@ -69,3 +69,4 @@ mvn clean test
 ```zsh
 mvn allure:serve
 ```
+# Diplom_3

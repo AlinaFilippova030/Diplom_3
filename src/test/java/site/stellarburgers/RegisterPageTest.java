@@ -2,8 +2,6 @@ package site.stellarburgers;
 
 
 import io.qameta.allure.junit4.DisplayName;
-import org.hamcrest.MatcherAssert;
-import org.junit.Assert;
 import site.stellarburgers.config.Config;
 import site.stellarburgers.data.Data;
 import site.stellarburgers.data.DataGenerator;
@@ -16,8 +14,6 @@ import site.stellarburgers.pages.MainPage;
 import site.stellarburgers.pages.RegisterPage;
 import site.stellarburgers.utils.BrowserUtils;
 import site.stellarburgers.utils.WebDriverFactory;
-
-import java.beans.Visibility;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

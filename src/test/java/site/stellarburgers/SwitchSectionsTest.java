@@ -106,6 +106,9 @@ public class SwitchSectionsTest extends SetUpTest {
     public void clickBunsTabTest() {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.isMainPageLoaded();
+        objMainPage.clickSaucesTab();
+        objMainPage.clickBunsTab();
+        objMainPage.isBunsTabSelected();
         MatcherAssert.assertThat("раздел с булками не отображается", objMainPage.isBunsListLoaded());
     }
 
@@ -116,6 +119,7 @@ public class SwitchSectionsTest extends SetUpTest {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.isMainPageLoaded();
         objMainPage.clickSaucesTab();
+        objMainPage.isSaucesTabSelected();
         MatcherAssert.assertThat("раздел с Соусами не отображается", objMainPage.isSauceListLoaded());
     }
 
@@ -126,6 +130,7 @@ public class SwitchSectionsTest extends SetUpTest {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.isMainPageLoaded();
         objMainPage.clickFillingsTab();
+        objMainPage.isFillingsTabSelected();
         MatcherAssert.assertThat("раздел с Ингридиентами не отображается", objMainPage.isFillingsLisLoaded());
     }
 }

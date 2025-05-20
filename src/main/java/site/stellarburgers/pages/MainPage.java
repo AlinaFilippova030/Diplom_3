@@ -18,10 +18,20 @@ public class MainPage {
     private By burgerLogo = By.xpath("//div[@class='AppHeader_header__logo__2D0X2']");
 
     private By bunsTab = By.xpath("//span[text()='Булки']");
+    private By bunsTabSelected = By.xpath("//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']//span[text()='Булки']");
+
+
     private By bunsList = By.xpath("//h2[text()='Булки']/ancestor::div[contains(@class, 'BurgerIngredients_ingredients__menuContainer')]");
     private By saucesTab = By.xpath("//span[text()='Соусы']");
+    private By saucesTabSelected = By.xpath("//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']//span[text()='Соусы']");
+
+
+
     private By sauceList = By.xpath("//h2[text()='Соусы']/ancestor::div[contains(@class, 'BurgerIngredients_ingredients__menuContainer')]");
     private By fillingsTab = By.xpath("//span[text()='Начинки']");
+    private By fillingsTabSelected = By.xpath("//div[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']//span[text()='Начинки']");
+
+
     private By fillingsList = By.xpath("//h2[text()='Начинки']/ancestor::div[contains(@class, 'BurgerIngredients_ingredients__menuContainer')]");
 
 
@@ -79,14 +89,43 @@ public class MainPage {
     }
 
 
+    @Step("Нажать на вкладку Булки")
+    public void clickBunsTab() {
+        driver.findElement(bunsTab).click();
+    }
+
+    @Step("Проверка выбрана ли вкладка Булки")
+    public boolean isBunsTabSelected() {
+        WebDriverWait wait = new WebDriverWait(driver, 3);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(bunsTabSelected));
+        return isElementVisible(bunsTabSelected);
+    }
+
+
+
     @Step("Нажать на вкладку Соусы")
     public void clickSaucesTab() {
         driver.findElement(saucesTab).click();
     }
 
+    @Step("Проверка выбрана ли вкладка Соусы")
+    public boolean isSaucesTabSelected() {
+        WebDriverWait wait = new WebDriverWait(driver, 3);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(saucesTabSelected));
+        return isElementVisible(saucesTabSelected);
+    }
+
+
     @Step("Нажать на вкладку Начинки")
     public void clickFillingsTab() {
         driver.findElement(fillingsTab).click();
+    }
+
+    @Step("Проверка выбрана ли вкладка Начинки")
+    public boolean isFillingsTabSelected() {
+        WebDriverWait wait = new WebDriverWait(driver, 3);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(fillingsTabSelected));
+        return isElementVisible(fillingsTabSelected);
     }
 
 

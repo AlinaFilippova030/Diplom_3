@@ -1,6 +1,7 @@
 package site.stellarburgers;
 
 
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import site.stellarburgers.config.Config;
 import site.stellarburgers.data.Data;
@@ -33,6 +34,7 @@ public class RegisterPageTest {
 
     @Test
     @DisplayName("Успешная регистрация")
+    @Description("Успешная Регистрация нового клиента с валидными данными и отображение страницы входа в аккаунт")
     public void successfulRegistrationTest() {
         MainPage objisMainPage = new MainPage(driver);
         LoginPage objLoginPage = new LoginPage(driver);
@@ -55,6 +57,7 @@ public class RegisterPageTest {
 
     @Test
     @DisplayName("не Успешная регистрация")
+    @Description("Не Успешная Регистрация нового клиента с не валидным паролем меньше 6 знаков и отображение подсказки для поля 'пароль'")
     public void notSuccessfulRegistrationTest() {
         MainPage objisMainPage = new MainPage(driver);
         LoginPage objLoginPage = new LoginPage(driver);

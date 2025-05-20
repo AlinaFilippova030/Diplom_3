@@ -1,5 +1,6 @@
 package site.stellarburgers;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import org.hamcrest.MatcherAssert;
@@ -23,6 +24,7 @@ public class SwitchSectionsTest extends SetUpTest {
 
     @Test
     @DisplayName("переход по клику на «Личный кабинет»")
+    @Description("Переходи в «Личный кабинет» и его отобраежение для авторизованного пользователя")
     public void openPersonalAccountTest() {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.isMainPageLoaded();
@@ -46,6 +48,7 @@ public class SwitchSectionsTest extends SetUpTest {
 
     @Test
     @DisplayName("переход по клику на «Конструктор» из «Личный кабинет»")
+    @Description("Проверка открытия главной страницы и отображения конструктора при переходе из личного кабинета по кнопке «Конструктор» авторизаванным пользователем")
     public void openMainPageByConstructorTest() {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.isMainPageLoaded();
@@ -73,6 +76,7 @@ public class SwitchSectionsTest extends SetUpTest {
 
     @Test
     @DisplayName("переход по клику логотип Stellar Burgers из «Личный кабинет»")
+    @Description("Проверка открытия главной страницы при переходе из личного кабинета по клику на логотип Stellar Burgers в Хедере стр авторизаванным пользователем")
     public void openMainPageByBurgerLogoTest() {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.isMainPageLoaded();
@@ -98,6 +102,7 @@ public class SwitchSectionsTest extends SetUpTest {
 
     @Test
     @DisplayName("переход к разделу: «Булки»")
+    @Description("Проверка отображения списка Булок после клика на раздел «Булки»")
     public void clickBunsTabTest() {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.isMainPageLoaded();
@@ -106,6 +111,7 @@ public class SwitchSectionsTest extends SetUpTest {
 
     @Test
     @DisplayName("переход к разделу: «Соусы»")
+    @Description("Проверка отображения списка Соусов после клика на раздел «Соусы»")
     public void clickSaucesTabTest() {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.isMainPageLoaded();
@@ -115,12 +121,11 @@ public class SwitchSectionsTest extends SetUpTest {
 
     @Test
     @DisplayName("переход к разделу: «Ингридиенты»")
+    @Description("Проверка отображения списка Ингридиентов после клика на раздел «Ингридиенты»")
     public void clickFillingsTabTest() {
         MainPage objMainPage = new MainPage(driver);
         objMainPage.isMainPageLoaded();
         objMainPage.clickFillingsTab();
         MatcherAssert.assertThat("раздел с Ингридиентами не отображается", objMainPage.isFillingsLisLoaded());
     }
-
-
 }

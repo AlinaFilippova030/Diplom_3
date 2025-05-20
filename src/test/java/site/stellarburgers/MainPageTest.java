@@ -1,6 +1,7 @@
 package site.stellarburgers;
 
 
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import org.hamcrest.MatcherAssert;
@@ -24,6 +25,7 @@ public class MainPageTest extends SetUpTest {
 
     @Test
     @DisplayName("вход по кнопке «Войти в аккаунт» на главной")
+    @Description("пользователь переходит к авторизации через кнопку «Войти в аккаунт» расположенную на главной стр Stellarburgers")
     public void logInFromMainPageTest() {
         MainPage objMainPage = new MainPage(driver);
         LoginPage objLoginPage = new LoginPage(driver);
@@ -41,6 +43,7 @@ public class MainPageTest extends SetUpTest {
 
     @Test
     @DisplayName("вход через кнопку «Личный кабинет»")
+    @Description("пользователь переходит к авторизации через кнопку «Войти» расположенную на стр «Личный кабинет»")
     public void logInFromPersonalAccountTest() {
         MainPage objMainPage = new MainPage(driver);
         LoginPage objLoginPage = new LoginPage(driver);
@@ -58,6 +61,7 @@ public class MainPageTest extends SetUpTest {
 
     @Test
     @DisplayName("вход через кнопку в форме регистрации")
+    @Description("пользователь переходит к авторизации через кнопку «Войти» расположенную на стр регистрации")
     public void logInFromRegisterPageTest() {
         MainPage objMainPage = new MainPage(driver);
         LoginPage objLoginPage = new LoginPage(driver);
@@ -80,6 +84,7 @@ public class MainPageTest extends SetUpTest {
 
     @Test
     @DisplayName("вход через кнопку в форме восстановления пароля")
+    @Description("пользователь переходит к авторизации через кнопку «Войти» расположенную на стр восстановления пароля")
     public void logInFromForgotPasswordPageTest() {
         MainPage objMainPage = new MainPage(driver);
         LoginPage objLoginPage = new LoginPage(driver);
@@ -104,6 +109,7 @@ public class MainPageTest extends SetUpTest {
 
     @Test
     @DisplayName("выход по кнопке «Выйти» в личном кабинете")
+    @Description("пользователь разлогинивается из Аккаунта через кнопку «Выйти» расположенную на стр личного кабинета")
     public void exitFromAccountTest() {
         MainPage objMainPage = new MainPage(driver);
         LoginPage objLoginPage = new LoginPage(driver);
